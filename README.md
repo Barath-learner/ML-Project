@@ -52,5 +52,5 @@ Linear regression was chosen as the modeling technique due to its simplicity and
 *   The higher score of 0.502 on the entire dataset may suggest some overfitting or a better fit to the training data (which is included in the full dataset).  It's important to prioritize the test set score for a more realistic assessment of the model's generalization ability.
 
 
-Conclusion
+## Conclusion
 The linear regression model provides some predictive capability for crime rates based on the socio-economic features in the dataset. However, the R² score of 0.285 on the test set suggests that the model's performance is suboptimal, capturing less than a third of the variance in crime rates. The higher score of 0.502 on the entire dataset indicates moderate explanatory power but highlights potential limitations in generalizing to unseen data (overfitting). These results suggest that a simple linear model may not fully capture the complexities influencing crime rates. Further investigation with more complex models or feature engineering might be beneficial.
