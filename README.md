@@ -51,39 +51,6 @@ Linear regression was chosen as the modeling technique due to its simplicity and
 *   The R² score of 0.285 on the test set indicates limited predictive power.  The linear regression model captures only a modest portion of the variability in crime rates.
 *   The higher score of 0.502 on the entire dataset may suggest some overfitting or a better fit to the training data (which is included in the full dataset).  It's important to prioritize the test set score for a more realistic assessment of the model's generalization ability.
 
-## Code Implementation
-
-```python
-# Import necessary libraries
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
-
-# Load the dataset
-data = pd.read_csv("Standard Metropolitan Areas Dataset.csv")
-
-# Separate features and target
-x = data.drop(columns=['crime_rate'])
-y = data['crime_rate']
-
-# Split the data
-x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.80)
-
-# Initialize and train the model
-model = LinearRegression()
-model.fit(x_train, y_train)
-
-# Make predictions
-y_hat = model.predict(x_test)
-
-# Evaluate the model
-score = r2_score(y_test, y_hat)
-print("R² Score on Test Set:", score)  # Output: ~0.285
-print("Model Score on Full Dataset:", model.score(x, y))  # Output: ~0.502
 
 Conclusion
 The linear regression model provides some predictive capability for crime rates based on the socio-economic features in the dataset. However, the R² score of 0.285 on the test set suggests that the model's performance is suboptimal, capturing less than a third of the variance in crime rates. The higher score of 0.502 on the entire dataset indicates moderate explanatory power but highlights potential limitations in generalizing to unseen data (overfitting). These results suggest that a simple linear model may not fully capture the complexities influencing crime rates. Further investigation with more complex models or feature engineering might be beneficial.
